@@ -103,3 +103,39 @@ npm run start
 Run tests:
 
 npm run test
+
+📌 Current Status
+
+This project is currently focused on architecture, structure, and frontend patterns.
+
+Areas planned for further improvement include:
+
+mobile responsiveness
+
+visual polish
+
+accessibility
+
+more complete authentication flows
+
+🔮 Future Improvements
+
+Full mobile responsiveness
+
+Improved UI/UX and design consistency
+
+Real authentication and authorization flows
+
+Backend/API integration
+
+Accessibility improvements
+
+End-to-end testing with Playwright
+
+Expanded dashboard functionality
+
+👩‍💻 Author
+
+Neda Jahadi
+Frontend-heavy Fullstack Developer
+React • TypeScript • Next.js
