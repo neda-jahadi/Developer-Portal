@@ -139,3 +139,7 @@ Expanded dashboard functionality
 Neda Jahadi
 Frontend-heavy Fullstack Developer
 React • TypeScript • Next.js
+
+# Developer Portal (Next.js)
+
+🔗 Live Demo: https://developer-portal-oy5qsfkwv-neda-jahadis-projects.vercel.app/
