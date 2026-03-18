@@ -19,7 +19,7 @@ export function RoleSwitcher({
   const [, startTransition] = useTransition();
 
   async function onValueChange(value: string) {
-    await fetch("/login", {
+    await fetch("/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ role: value }),

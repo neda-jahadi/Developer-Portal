@@ -5,17 +5,19 @@ import { User } from "@/app/types/user";
 export const currentUsers: User[] = [
   {
     id: "1",
-    name: "Neda Jahadi",
-    email: "neda@example.com",
+    email: "admin@test.com",
+    password: "admin123",
+    name: "Admin User",
     role: "admin",
-    status: "active",
+    status: "active"
   },
   {
     id: "2",
-    name: "Alex Developer",
-    email: "alex@example.com",
+    email: "dev@test.com",
+    password: "dev123",
+    name: "Developer User",
     role: "developer",
-    status: "active",
+    status: "active"
   },
 ];
 
@@ -80,3 +82,11 @@ export const docs = [
     content: `# Authentication\n\nInclude your bearer token in the Authorization header.`,
   },
 ];
+
+export function findUserByEmail(email: string) {
+  return currentUsers.find((u) => u.email.toLowerCase() === email.toLowerCase());
+}
+
+export function findUserById(id: string) {
+  return currentUsers.find((u) => u.id === id);
+}
