@@ -1,5 +1,5 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHeader } from '@/components/layout/page-header';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function UsagePage() {
   return (
@@ -14,17 +14,13 @@ export default function UsagePage() {
           <CardHeader>
             <CardTitle>Request volume</CardTitle>
           </CardHeader>
-          <CardContent className="h-48 text-sm text-slate-500">
-            Chart placeholder
-          </CardContent>
+          <CardContent className="h-48 text-sm text-slate-500">Chart placeholder</CardContent>
         </Card>
         <Card>
           <CardHeader>
             <CardTitle>Error trends</CardTitle>
           </CardHeader>
-          <CardContent className="h-48 text-sm text-slate-500">
-            Chart placeholder
-          </CardContent>
+          <CardContent className="h-48 text-sm text-slate-500">Chart placeholder</CardContent>
         </Card>
       </div>
     </div>

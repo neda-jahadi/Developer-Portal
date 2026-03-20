@@ -1,4 +1,4 @@
-export type Role = "developer" | "admin";
+export type Role = 'developer' | 'admin';
 
 export type User = {
   id: string;
@@ -6,5 +6,5 @@ export type User = {
   password: string;
   name: string;
   role: Role;
-  status: "active" | "invited" | "disabled";
+  status: 'active' | 'invited' | 'disabled';
 };

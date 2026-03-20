@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CodeExample } from "@/components/docs/code-example";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { CodeExample } from '@/components/docs/code-example';
 
 export default function ExamplesPage() {
   return (

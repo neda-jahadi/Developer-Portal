@@ -1,11 +1,11 @@
-import "server-only";
+import 'server-only';
 
-import { SignJWT, jwtVerify } from "jose";
-import { cookies } from "next/headers";
-import type { Role } from "@/app/types/user";
-import { findUserById } from "./mock-data";
+import { SignJWT, jwtVerify } from 'jose';
+import { cookies } from 'next/headers';
+import type { Role } from '@/app/types/user';
+import { findUserById } from './mock-data';
 
-const SESSION_COOKIE_NAME = "session";
+const SESSION_COOKIE_NAME = 'session';
 const secret = new TextEncoder().encode(process.env.SESSION_SECRET);
 
 type SessionPayload = {
@@ -15,9 +15,9 @@ type SessionPayload = {
 
 async function signSession(payload: SessionPayload) {
   return await new SignJWT(payload)
-    .setProtectedHeader({ alg: "HS256" })
+    .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
-    .setExpirationTime("7d")
+    .setExpirationTime('7d')
     .sign(secret);
 }
 
@@ -32,9 +32,9 @@ export async function createSession(userId: string, role: Role) {
 
   cookieStore.set(SESSION_COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
     maxAge: 60 * 60 * 24 * 7, // 7 days
   });
 }

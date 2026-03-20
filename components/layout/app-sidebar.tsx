@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { getPortalNav } from "@/lib/nav";
-import { Role } from "@/app/types/user";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { getPortalNav } from '@/lib/nav';
+import { Role } from '@/app/types/user';
+import { usePathname } from 'next/navigation';
 
 export function AppSidebar({ role }: { role: Role }) {
   const items = getPortalNav(role);
@@ -21,7 +21,7 @@ export function AppSidebar({ role }: { role: Role }) {
           <Link
             key={item.href}
             href={item.href}
-            className={`block rounded-md px-3 py-2 text-sm hover:bg-slate-100 ${pathname === item.href ? "text-blue-700 font-medium" : " text-slate-700"}`}
+            className={`block rounded-md px-3 py-2 text-sm hover:bg-slate-100 ${pathname === item.href ? 'text-blue-700 font-medium' : ' text-slate-700'}`}
           >
             {item.title}
           </Link>

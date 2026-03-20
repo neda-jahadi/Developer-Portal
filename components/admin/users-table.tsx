@@ -1,5 +1,5 @@
-import { User } from "@/app/types/user";
-import { Badge } from "@/components/ui/badge";
+import { User } from '@/app/types/user';
+import { Badge } from '@/components/ui/badge';
 import {
   Table,
   TableBody,
@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 
 export function UsersTable({ users }: { users: User[] }) {
   return (

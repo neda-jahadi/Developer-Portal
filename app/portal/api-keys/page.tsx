@@ -1,6 +1,6 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { PageHeader } from '@/components/layout/page-header';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableBody,
@@ -8,8 +8,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { apiKeys } from "@/lib/mock-data";
+} from '@/components/ui/table';
+import { apiKeys } from '@/lib/mock-data';
 
 export default function ApiKeysPage() {
   return (
@@ -37,9 +37,7 @@ export default function ApiKeysPage() {
                 <TableCell>{key.prefix}</TableCell>
                 <TableCell>{key.createdAt}</TableCell>
                 <TableCell>
-                  <Badge
-                    variant={key.status === "active" ? "default" : "secondary"}
-                  >
+                  <Badge variant={key.status === 'active' ? 'default' : 'secondary'}>
                     {key.status}
                   </Badge>
                 </TableCell>

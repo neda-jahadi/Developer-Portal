@@ -1,7 +1,7 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { UsersTable } from "@/components/admin/users-table";
-import { currentUsers } from "@/lib/mock-data";
-import { Button } from "@/components/ui/button";
+import { PageHeader } from '@/components/layout/page-header';
+import { UsersTable } from '@/components/admin/users-table';
+import { currentUsers } from '@/lib/mock-data';
+import { Button } from '@/components/ui/button';
 
 export default function AdminUsersPage() {
   return (

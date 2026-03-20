@@ -1,10 +1,4 @@
-export function EmptyState({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+export function EmptyState({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-lg border border-dashed bg-white p-8 text-center">
       <h3 className="text-lg font-medium">{title}</h3>

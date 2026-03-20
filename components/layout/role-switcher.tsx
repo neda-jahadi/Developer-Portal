@@ -1,27 +1,23 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useTransition } from "react";
+import { useRouter } from 'next/navigation';
+import { useTransition } from 'react';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 
-export function RoleSwitcher({
-  defaultRole,
-}: {
-  defaultRole: "developer" | "admin";
-}) {
+export function RoleSwitcher({ defaultRole }: { defaultRole: 'developer' | 'admin' }) {
   const router = useRouter();
   const [, startTransition] = useTransition();
 
   async function onValueChange(value: string) {
-    await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ role: value }),
     });
 

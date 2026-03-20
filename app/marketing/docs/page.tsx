@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { docs } from "@/lib/mock-data";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from 'next/link';
+import { docs } from '@/lib/mock-data';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function DocsPage() {
   return (
@@ -13,9 +13,7 @@ export default function DocsPage() {
               <CardHeader>
                 <CardTitle>{doc.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-slate-600">
-                {doc.description}
-              </CardContent>
+              <CardContent className="text-sm text-slate-600">{doc.description}</CardContent>
             </Card>
           </Link>
         ))}

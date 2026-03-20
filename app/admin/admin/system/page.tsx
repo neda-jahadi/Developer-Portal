@@ -1,13 +1,10 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHeader } from '@/components/layout/page-header';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function AdminSystemPage() {
   return (
     <div>
-      <PageHeader
-        title="System settings"
-        description="Portal health and configuration overview."
-      />
+      <PageHeader title="System settings" description="Portal health and configuration overview." />
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>

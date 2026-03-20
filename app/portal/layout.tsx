@@ -1,19 +1,15 @@
-import { AppSidebar } from "@/components/layout/app-sidebar";
-import LogoutButton from "@/components/layout/logout-button";
-import { MobileSidebar } from "@/components/layout/mobile-sidebar";
-import { RoleSwitcher } from "@/components/layout/role-switcher";
-import { getCurrentRole } from "@/lib/auth";
-import { getCurrentUser } from "@/lib/session";
-import { redirect } from "next/navigation";
+import { AppSidebar } from '@/components/layout/app-sidebar';
+import LogoutButton from '@/components/layout/logout-button';
+import { MobileSidebar } from '@/components/layout/mobile-sidebar';
+import { RoleSwitcher } from '@/components/layout/role-switcher';
+import { getCurrentRole } from '@/lib/auth';
+import { getCurrentUser } from '@/lib/session';
+import { redirect } from 'next/navigation';
 
-export default async function PortalLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function PortalLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
   if (!user) {
-    redirect("/login");
+    redirect('/login');
   }
 
   return (

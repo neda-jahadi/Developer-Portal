@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function TopNav() {
   return (
@@ -9,16 +9,10 @@ export function TopNav() {
           Developer Portal MVP
         </Link>
         <nav className="flex items-center gap-3">
-          <Link
-            href="/marketing/docs"
-            className="text-sm text-slate-600 hover:text-slate-900"
-          >
+          <Link href="/marketing/docs" className="text-sm text-slate-600 hover:text-slate-900">
             Docs
           </Link>
-          <Link
-            href="/marketing/examples"
-            className="text-sm text-slate-600 hover:text-slate-900"
-          >
+          <Link href="/marketing/examples" className="text-sm text-slate-600 hover:text-slate-900">
             Examples
           </Link>
           <Button asChild>

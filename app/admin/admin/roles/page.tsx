@@ -1,13 +1,10 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHeader } from '@/components/layout/page-header';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function AdminRolesPage() {
   return (
     <div>
-      <PageHeader
-        title="Roles & permissions"
-        description="Role model for the portal."
-      />
+      <PageHeader title="Roles & permissions" description="Role model for the portal." />
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>

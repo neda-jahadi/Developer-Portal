@@ -1,16 +1,13 @@
-import { PageHeader } from "@/components/layout/page-header";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { PageHeader } from '@/components/layout/page-header';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 export default function SettingsPage() {
   return (
     <div>
-      <PageHeader
-        title="Settings"
-        description="Manage profile and portal preferences."
-      />
+      <PageHeader title="Settings" description="Manage profile and portal preferences." />
 
       <Card className="max-w-2xl">
         <CardHeader>

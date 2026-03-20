@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function HomePage() {
   return (
@@ -13,9 +13,8 @@ export default function HomePage() {
           Developer portal MVP with docs, dashboards and admin flows.
         </h1>
         <p className="max-w-2xl text-slate-600">
-          A portfolio-ready frontend foundation demonstrating scalable UI
-          structure, reusable components, role-based navigation and
-          quality-focused patterns.
+          A portfolio-ready frontend foundation demonstrating scalable UI structure, reusable
+          components, role-based navigation and quality-focused patterns.
         </p>
         <div className="flex gap-3">
           <Button asChild>

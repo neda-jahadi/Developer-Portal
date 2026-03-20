@@ -1,5 +1,5 @@
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -7,9 +7,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Role } from "@/app/types/user";
-import { AppSidebar } from "./app-sidebar";
+} from '@/components/ui/sheet';
+import { Role } from '@/app/types/user';
+import { AppSidebar } from './app-sidebar';
 
 export function MobileSidebar({ role }: { role: Role }) {
   return (
@@ -22,9 +22,7 @@ export function MobileSidebar({ role }: { role: Role }) {
       <SheetContent>
         <SheetHeader className="sr-only">
           <SheetTitle>Portal navigation</SheetTitle>
-          <SheetDescription>
-            Use these links to navigate through the portal.
-          </SheetDescription>
+          <SheetDescription>Use these links to navigate through the portal.</SheetDescription>
         </SheetHeader>
         <AppSidebar role={role} />
       </SheetContent>

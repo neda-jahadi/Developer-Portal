@@ -10,7 +10,7 @@ export type Activity = {
   event: string;
   actor: string;
   timestamp: string;
-  status: "success" | "warning" | "info";
+  status: 'success' | 'warning' | 'info';
 };
 
 export type ApiKey = {
@@ -18,5 +18,5 @@ export type ApiKey = {
   name: string;
   prefix: string;
   createdAt: string;
-  status: "active" | "revoked";
+  status: 'active' | 'revoked';
 };

@@ -1,5 +1,5 @@
-import { Activity } from "@/app/types/dashboard";
-import { Badge } from "@/components/ui/badge";
+import { Activity } from '@/app/types/dashboard';
+import { Badge } from '@/components/ui/badge';
 import {
   Table,
   TableBody,
@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 
 export function ActivityTable({ activities }: { activities: Activity[] }) {
   return (

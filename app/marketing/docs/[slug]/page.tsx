@@ -1,12 +1,8 @@
-import { notFound } from "next/navigation";
-import { docs } from "@/lib/mock-data";
-import { CodeExample } from "@/components/docs/code-example";
+import { notFound } from 'next/navigation';
+import { docs } from '@/lib/mock-data';
+import { CodeExample } from '@/components/docs/code-example';
 
-export default async function DocDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function DocDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const doc = docs.find((item) => item.slug === slug);
 

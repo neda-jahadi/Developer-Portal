@@ -1,38 +1,38 @@
-"use client";
+'use client';
 
-import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+import { useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 
 export default function LoginPage() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
-  const [error, setError] = useState("");
-  const [email, setEmail] = useState("admin@test.com");
-  const [password, setPassword] = useState("admin123");
+  const [error, setError] = useState('');
+  const [email, setEmail] = useState('admin@test.com');
+  const [password, setPassword] = useState('admin123');
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError("");
+    setError('');
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
 
     if (!res.ok) {
-      setError(data?.message ?? "Login failed");
+      setError(data?.message ?? 'Login failed');
       return;
     }
 
     startTransition(() => {
-      router.push("/portal/dashboard");
+      router.push('/portal/dashboard');
       router.refresh();
     });
   }
@@ -73,7 +73,7 @@ export default function LoginPage() {
             ) : null}
 
             <Button type="submit" className="w-full" disabled={isPending}>
-              {isPending ? "Signing in..." : "Sign in"}
+              {isPending ? 'Signing in...' : 'Sign in'}
             </Button>
           </form>
 

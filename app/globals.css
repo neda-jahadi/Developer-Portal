@@ -1,129 +1,462 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
+/* Enables dark: utilities when a parent has the .dark class */
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Map raw CSS variables to Tailwind theme tokens.
+
+  This is what makes classes like:
+  - bg-background
+  - text-foreground
+  - bg-primary
+  - border-border
+  - rounded-lg
+  work across the project.
+*/
 @theme inline {
+  /* =========================
+     CORE UI COLORS
+     ========================= */
+
+  /* Main page/app background color */
   --color-background: var(--background);
+
+  /* Default text color used on the main background */
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
+
+  /* Card, panel, container background */
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
+
+  /* Text color used inside cards */
+  --color-card-foreground: var(--card-foreground);
+
+  /* Popover, dropdown, menu, tooltip background */
+  --color-popover: var(--popover);
+
+  /* Text color used inside popovers/dropdowns */
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Main brand/action color (primary buttons, key actions) */
+  --color-primary: var(--primary);
+
+  /* Text/icon color shown on top of primary background */
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Secondary surface/action color for less important actions */
+  --color-secondary: var(--secondary);
+
+  /* Text/icon color shown on top of secondary background */
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Subtle surface color for muted sections, badges, empty states */
+  --color-muted: var(--muted);
+
+  /* Softer text color for secondary information, descriptions, placeholders */
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Accent surface for hover states, highlights, subtle emphasis */
+  --color-accent: var(--accent);
+
+  /* Text/icon color shown on top of accent background */
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Destructive/danger color for delete, remove, critical warnings */
+  --color-destructive: var(--destructive);
+
+  /* Default border color for cards, sections, separators */
+  --color-border: var(--border);
+
+  /* Border color specifically for input fields */
+  --color-input: var(--input);
+
+  /* Focus ring color for keyboard focus and active form controls */
+  --color-ring: var(--ring);
+
+  /* =========================
+     SIDEBAR COLORS
+     Use only inside sidebar-related UI
+     ========================= */
+
+  /* Sidebar container background */
+  --color-sidebar: var(--sidebar);
+
+  /* Default text color inside sidebar */
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  /* Active / selected / highlighted item background in sidebar */
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  /* Text/icon color used on top of sidebar primary background */
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  /* Hover / interactive surface color inside sidebar */
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  /* Text/icon color used on top of sidebar accent background */
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  /* Border color for sidebar sections/dividers */
+  --color-sidebar-border: var(--sidebar-border);
+
+  /* Focus ring color for sidebar controls */
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* =========================
+     CHART COLORS
+     For graphs and data visualizations
+     ========================= */
+
+  /* First chart series color */
+  --color-chart-1: var(--chart-1);
+
+  /* Second chart series color */
+  --color-chart-2: var(--chart-2);
+
+  /* Third chart series color */
+  --color-chart-3: var(--chart-3);
+
+  /* Fourth chart series color */
+  --color-chart-4: var(--chart-4);
+
+  /* Fifth chart series color */
+  --color-chart-5: var(--chart-5);
+
+  /* =========================
+     RADIUS SCALE
+     Used by rounded-sm / rounded-md / rounded-lg / rounded-xl
+     ========================= */
+
+  /* Small radius */
+  --radius-sm: calc(var(--radius) * 0.75);
+
+  /* Medium radius */
+  --radius-md: calc(var(--radius) * 0.875);
+
+  /* Base/default large radius */
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Extra large radius */
+  --radius-xl: calc(var(--radius) * 1.25);
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  /* Default sans-serif font used across the app */
+  --font-sans: var(--font-geist-sans);
+
+  /* Monospace font used for code, pre, kbd, samp */
+  --font-mono: var(--font-geist-mono);
 }
 
+/*
+  Light theme tokens.
+  These are the default values used when .dark is NOT active.
+*/
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* =========================
+     BASE
+     ========================= */
+
+  /* Main app/page background */
+  --background: oklch(0.98 0.01 260);
+
+  /* Default text color on page background */
+  --foreground: oklch(0.18 0.02 260);
+
+  /* =========================
+     SURFACES
+     ========================= */
+
+  /* Card/container background */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+
+  /* Default text color inside cards */
+  --card-foreground: oklch(0.18 0.02 260);
+
+  /* Popover/dropdown/modal-like floating surface background */
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Text color inside popovers */
+  --popover-foreground: oklch(0.18 0.02 260);
+
+  /* =========================
+     BRAND / ACTION COLORS
+     ========================= */
+
+  /* Main brand color used for primary actions */
+  --primary: oklch(0.28 0.08 265);
+
+  /* Text/icon color on top of primary */
+  --primary-foreground: oklch(0.98 0.01 255);
+
+  /* Softer secondary action/surface */
+  --secondary: oklch(0.94 0.01 255);
+
+  /* Text/icon color on top of secondary */
+  --secondary-foreground: oklch(0.28 0.03 255);
+
+  /* Muted/subtle surface */
+  --muted: oklch(0.95 0.005 255);
+
+  /* Secondary / helper / subdued text */
+  --muted-foreground: oklch(0.5 0.02 255);
+
+  /* Accent surface for hover/emphasis */
+  --accent: oklch(0.9 0.02 255);
+
+  /* Text/icon color on top of accent */
+  --accent-foreground: oklch(0.28 0.08 265);
+
+  /* Danger/destructive action color */
+  --destructive: oklch(0.62 0.22 25);
+
+  /* =========================
+     GENERIC UI TOKENS
+     ========================= */
+
+  /* Default border color */
+  --border: oklch(0.9 0.01 255);
+
+  /* Input border color */
+  --input: oklch(0.92 0.01 255);
+
+  /* Focus ring color */
+  --ring: oklch(0.28 0.08 265);
+
+  /* =========================
+     SHAPE
+     ========================= */
+
+  /* Base border radius used to derive sm/md/lg/xl */
+  --radius: 0.75rem;
+
+  /* =========================
+     SIDEBAR
+     ========================= */
+
+  /* Sidebar background */
+  --sidebar: oklch(0.96 0.01 255);
+
+  /* Default text inside sidebar */
+  --sidebar-foreground: oklch(0.18 0.02 260);
+
+  /* Active/selected item background inside sidebar */
+  --sidebar-primary: var(--primary);
+
+  /* Text/icon on active sidebar item */
+  --sidebar-primary-foreground: var(--primary-foreground);
+
+  /* Hover surface inside sidebar */
+  --sidebar-accent: oklch(0.93 0.01 255);
+
+  /* Text/icon on hover sidebar surface */
+  --sidebar-accent-foreground: oklch(0.28 0.08 265);
+
+  /* Sidebar border color */
+  --sidebar-border: oklch(0.9 0.01 255);
+
+  /* Sidebar focus ring color */
+  --sidebar-ring: var(--ring);
+
+  /* =========================
+     CHARTS
+     ========================= */
+
+  /* Data series 1 */
+  --chart-1: oklch(0.6 0.12 260);
+
+  /* Data series 2 */
+  --chart-2: oklch(0.65 0.1 200);
+
+  /* Data series 3 */
+  --chart-3: oklch(0.62 0.14 300);
+
+  /* Data series 4 */
+  --chart-4: oklch(0.7 0.1 80);
+
+  /* Data series 5 */
+  --chart-5: oklch(0.68 0.12 20);
 }
 
+/*
+  Dark theme tokens.
+  These values replace :root values whenever a parent has .dark.
+*/
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Main app/page background in dark mode */
+  --background: oklch(0.16 0.02 260);
+
+  /* Default text color in dark mode */
+  --foreground: oklch(0.96 0.01 255);
+
+  /* Card/container background in dark mode */
+  --card: oklch(0.2 0.02 260);
+
+  /* Text inside cards in dark mode */
+  --card-foreground: oklch(0.96 0.01 255);
+
+  /* Popover/dropdown background in dark mode */
+  --popover: oklch(0.2 0.02 260);
+
+  /* Text inside popovers in dark mode */
+  --popover-foreground: oklch(0.96 0.01 255);
+
+  /* Primary brand/action color in dark mode */
+  --primary: oklch(0.7 0.12 260);
+
+  /* Text/icon color on top of dark-mode primary */
+  --primary-foreground: oklch(0.16 0.02 260);
+
+  /* Secondary surface in dark mode */
+  --secondary: oklch(0.28 0.02 260);
+
+  /* Text on top of dark-mode secondary */
+  --secondary-foreground: oklch(0.96 0.01 255);
+
+  /* Muted surface in dark mode */
+  --muted: oklch(0.28 0.02 260);
+
+  /* Muted text in dark mode */
+  --muted-foreground: oklch(0.7 0.01 255);
+
+  /* Accent surface in dark mode */
+  --accent: oklch(0.3 0.03 260);
+
+  /* Accent text in dark mode */
+  --accent-foreground: oklch(0.96 0.01 255);
+
+  /* Destructive color in dark mode */
+  --destructive: oklch(0.68 0.2 25);
+
+  /* Default border color in dark mode */
+  --border: oklch(1 0 0 / 0.1);
+
+  /* Input border color in dark mode */
+  --input: oklch(1 0 0 / 0.15);
+
+  /* Focus ring color in dark mode */
+  --ring: oklch(0.7 0.12 260);
+
+  /* Sidebar background in dark mode */
+  --sidebar: oklch(0.18 0.02 260);
+
+  /* Sidebar default text in dark mode */
+  --sidebar-foreground: oklch(0.96 0.01 255);
+
+  /* Active sidebar item background in dark mode */
+  --sidebar-primary: var(--primary);
+
+  /* Text/icon on active sidebar item in dark mode */
+  --sidebar-primary-foreground: var(--primary-foreground);
+
+  /* Sidebar hover surface in dark mode */
+  --sidebar-accent: oklch(0.26 0.02 260);
+
+  /* Text/icon on sidebar hover surface in dark mode */
+  --sidebar-accent-foreground: oklch(0.96 0.01 255);
+
+  /* Sidebar border in dark mode */
+  --sidebar-border: oklch(1 0 0 / 0.1);
+
+  /* Sidebar ring in dark mode */
+  --sidebar-ring: var(--ring);
 }
 
+/*
+  Base styles applied globally.
+  These create your default app typography and UI behavior.
+*/
 @layer base {
   * {
+    /* Default border color and default outline color */
     @apply border-border outline-ring/50;
   }
+
+  html {
+    /* Default app font and font smoothing */
+    @apply font-sans antialiased;
+  }
+
   body {
+    /* App background and default text color */
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  h1 {
+    /* Large page heading */
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h2 {
+    /* Section heading */
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    /* Smaller heading / card title */
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    /* Default paragraph line height */
+    @apply leading-7;
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    /* Monospace font for code and keyboard text */
+    @apply font-mono;
+  }
+}
+
+/*
+  Reusable app-level layout utility classes.
+  These are not Tailwind defaults — they are your project conventions.
+*/
+@layer components {
+  .page-container {
+    /* Standard centered page wrapper with max width and horizontal padding */
+    @apply mx-auto w-full max-w-7xl px-4 md:px-6;
+  }
+
+  .page-section {
+    /* Standard vertical spacing for page sections */
+    @apply py-6 md:py-8;
+  }
+
+  .page-stack {
+    /* Large vertical spacing between major page blocks */
+    @apply space-y-8;
+  }
+
+  .content-stack {
+    /* Medium vertical spacing between content groups */
+    @apply space-y-6;
+  }
+
+  .form-stack {
+    /* Vertical spacing between fields/groups in a form */
+    @apply space-y-4;
+  }
+
+  .field-stack {
+    /* Tight spacing between label, input, help text, error text */
+    @apply space-y-2;
+  }
+
+  .card-padding {
+    /* Standard inner padding for cards/panels */
+    @apply p-4 md:p-6;
+  }
+
+  .toolbar-row {
+    /* Horizontal action row for buttons, filters, controls */
+    @apply flex flex-wrap items-center gap-2 md:gap-3;
   }
 }
