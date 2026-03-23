@@ -1,4 +1,4 @@
-import { User } from '@/app/types/user';
+import { User } from '@/app/[locale]/types/user';
 import { Badge } from '@/components/ui/badge';
 import {
   Table,

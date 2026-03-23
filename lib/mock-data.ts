@@ -1,5 +1,5 @@
-import { Activity, ApiKey, Stat } from '@/app/types/dashboard';
-import { User } from '@/app/types/user';
+import { Activity, ApiKey, Stat } from '@/app/[locale]/types/dashboard';
+import { User } from '@/app/[locale]/types/user';
 
 export const currentUsers: User[] = [
   {

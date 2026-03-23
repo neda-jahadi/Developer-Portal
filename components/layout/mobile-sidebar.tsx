@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Role } from '@/app/types/user';
+import { Role } from '@/app/[locale]/types/user';
 import { AppSidebar } from './app-sidebar';
 
 export function MobileSidebar({ role }: { role: Role }) {

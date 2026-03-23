@@ -2,7 +2,7 @@ import 'server-only';
 
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
-import type { Role } from '@/app/types/user';
+import type { Role } from '@/app/[locale]/types/user';
 import { findUserById } from './mock-data';
 
 const SESSION_COOKIE_NAME = 'session';

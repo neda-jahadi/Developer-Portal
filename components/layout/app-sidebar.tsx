@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { getPortalNav } from '@/lib/nav';
-import { Role } from '@/app/types/user';
+import { Role } from '@/app/[locale]/types/user';
 import { usePathname } from 'next/navigation';
 
 export function AppSidebar({ role }: { role: Role }) {
@@ -10,7 +10,7 @@ export function AppSidebar({ role }: { role: Role }) {
   const pathname = usePathname();
 
   return (
-    <div className="w-full border-r bg-white md:w-64">
+    <div className="w-full border-r bg-white md:w-64 md:min-h-screen">
       <div className="p-4">
         <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
           Portal navigation

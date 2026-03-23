@@ -1,4 +1,4 @@
-import { Role } from '@/app/types/user';
+import { Role } from '@/app/[locale]/types/user';
 
 export function getPortalNav(role: Role) {
   const common = [

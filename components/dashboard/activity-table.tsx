@@ -1,4 +1,4 @@
-import { Activity } from '@/app/types/dashboard';
+import { Activity } from '@/app/[locale]/types/dashboard';
 import { Badge } from '@/components/ui/badge';
 import {
   Table,

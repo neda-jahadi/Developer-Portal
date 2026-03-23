@@ -1,4 +1,4 @@
-import { Role } from '@/app/types/user';
+import { Role } from '@/app/[locale]/types/user';
 import { cookies } from 'next/headers';
 
 const ROLE_COOKIE = 'portal-role';

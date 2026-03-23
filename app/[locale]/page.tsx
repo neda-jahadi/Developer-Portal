@@ -1,27 +1,22 @@
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export default function HomePage() {
+  const t = useTranslations('home');
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
       <section className="mb-10 space-y-4">
-        <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
-          React · TypeScript · Next.js · Tailwind
-        </p>
         <h1 className="max-w-3xl text-4xl font-bold tracking-tight">
-          Developer portal MVP with docs, dashboards and admin flows.
+          Developer portal with docs, dashboards and admin flows.
         </h1>
-        <p className="max-w-2xl text-slate-600">
-          A portfolio-ready frontend foundation demonstrating scalable UI structure, reusable
-          components, role-based navigation and quality-focused patterns.
-        </p>
         <div className="flex gap-3">
           <Button asChild>
-            <Link href="/portal/dashboard">View dashboard</Link>
+            <Link href="/portal/dashboard">{t('dashboard')}</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/marketing/docs">Browse docs</Link>
+            <Link href="/marketing/docs">{t('docs')}</Link>
           </Button>
         </div>
       </section>
