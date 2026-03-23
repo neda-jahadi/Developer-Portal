@@ -1,6 +1,7 @@
 {
   "home": {
     "dashboard": "Visa instrumentbräda",
-    "docs": "Bläddra i dokument"
+    "docs": "Bläddra i dokument",
+    "heroHeader": "Utvecklarportal med dokumentation, instrumentpaneler och administrationsflöden"
   }
 }

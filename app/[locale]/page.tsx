@@ -8,9 +8,7 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
       <section className="mb-10 space-y-4">
-        <h1 className="max-w-3xl text-4xl font-bold tracking-tight">
-          Developer portal with docs, dashboards and admin flows.
-        </h1>
+        <h1 className="max-w-3xl text-4xl font-bold tracking-tight">{t('heroHeader')}</h1>
         <div className="flex gap-3">
           <Button asChild>
             <Link href="/portal/dashboard">{t('dashboard')}</Link>

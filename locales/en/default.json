@@ -1,6 +1,7 @@
 {
   "home": {
     "dashboard": "View dashboard",
-    "docs": "Browse docs"
+    "docs": "Browse docs",
+    "heroHeader": "Developer portal with docs, dashboards and admin flows"
   }
 }
